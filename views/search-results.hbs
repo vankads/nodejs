@@ -1,0 +1,67 @@
+        <!-- Page Title -->
+		<div class="section-breadcrumbs">
+			<div class="container">
+				<nav id="searchmenu" class="mainmenu">
+					<ul>
+						<li><a href="/search?category=cakes">Cakes</a></li>
+						<li><a href="/search?category=flowers">Flowers</a></li>
+						<li><a href="/search?category=combos">Combos</a></li>
+						<li><a href="/search?category=chocolates">Chocolates</a></li>
+						<li><a href="/search?category=sweets">Sweets</a></li>
+						<li class="right">
+							<div>
+								<input class="" id="location-input" type="text" placeholder="Search product">
+							</div>
+						</li>
+					</ul>					
+				</nav>
+			</div>
+		</div>
+        
+	    <div class="eshop-section section">
+			<div id="content" class="container">								
+				{{#if products}}
+					<h2>Items near your location</h2>
+					<h4 id="add-to-cart-msg"></h4>
+					{{#each products}}
+						{{#newRow @index}}
+						<div class="row">
+						{{/newRow}}	
+							<div class="col-md-3 col-sm-6">
+								<div class="shop-item">
+									<div class="shop-item-image">
+										<a href="/product/{{id}}"><img src="images/products/{{id}}.jpg" alt="Item Name"></a>
+									</div>
+									<div class="title">
+										<h3><a href="/product/{{id}}">{{title}}</a></h3>
+									</div>
+									<div class="price">
+										{{price}}
+									</div>
+									<div class="actions">
+										<a id={{id}} href="#" class="resultItem btn btn-small"><i class="icon-shopping-cart icon-white"></i> Add</a> <span>or <a href="product/{{id}}">Read more</a></span>
+									</div>
+								</div>							
+							</div>
+						{{#newRow @index}}	
+						</div>
+						{{/newRow}}
+					{{/each}}
+				{{/if}}			
+			</div>
+	    	<div id="page-selection" class="pagination-wrapper"></div>	    	
+	    </div>
+
+        <!-- Javascripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="javascripts/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="javascripts/bootstrap.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+        <script src="javascripts/jquery.fitvids.js"></script>
+        <script src="javascripts/jquery.sequence-min.js"></script>
+        <script src="javascripts/jquery.bxslider.js"></script>
+        <script src="javascripts/main-menu.js"></script>
+        <script src="javascripts/template.js"></script>
+        <script src="javascripts/jquery.bootpag.min.js"></script>
+        <script src="javascripts/listing.js"></script>
+        <script src="javascripts/cart.js"></script>
